@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "Product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cpu": {
+      "type": "richtext",
+      "required": true
+    },
+    "ram": {
+      "type": "richtext",
+      "required": true
+    },
+    "gpu": {
+      "type": "string",
+      "required": true
+    },
+    "raid": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "model": "category",
+      "via": "products"
+    },
+    "manufacturer": {
+      "model": "manufacturer",
+      "via": "products"
+    },
+    "type": {
+      "model": "type",
+      "via": "products"
+    }
+  }
+}
